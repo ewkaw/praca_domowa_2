@@ -1,0 +1,74 @@
+*{
+    font-family: 'Roboto', 'sans-serif';
+    color:  #111827;
+}
+.app-header{
+    padding: 4rem 1rem 4rem 1rem;
+}
+
+.app-title{
+    color: #dc2626;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.app-navigation{
+    padding-bottom: 4rem;
+    text-align: center;
+    width: 100%;
+}
+
+.app-navigation a{
+    margin: 0 0.75rem 0 0.75rem;
+    text-decoration: none;;
+}
+
+.active-link{
+    font-weight: 600;
+    color: #dc2626;
+}
+
+.recipe-container{
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.recipe-title{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.recipe-image{
+    display: block;
+    max-width:  30rem;
+    margin: 2rem auto 2rem auto;
+}
+
+.recipe-description{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.recipe-content{
+    display: flex;
+}
+
+.recipe-ingredients-section{
+    width: 100%;
+    max-width: 16rem;
+}
+
+.recipe-subtitle{
+    font-size: 1.25rem;
+    color: #dc2626;
+}
+
+.recipe-ingredients-list{
+    line-height: 1.5;
+}
+
+.recipe-instructions-list{
+    line-height: 2;
+}

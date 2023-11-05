@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <h2>Rezerwacja</h2>
+        <!-- Dodaj formularz rejestracji -->
+        <form action="index.html" method="get">
+            <fieldset>
+                <legend>Dane osobowe</legend>
+                <label for="name_field">Imię</label>
+                <input type="text" name="name" id="name_field" />
+    
+                <label for="surname_field">Nazwisko</label>
+                <input type="text" name="surname" id="surname_field" />
+    
+                <label for="email_field">Emai:</label>
+                <input type="email" name="email" id="email_field" />
+    
+                <label for="tel_field">Tel</label>
+                <input type="tel" name="tel" id="tel_field" />
+            </fieldset>
+            <fieldset>
+                <legend>Zakwaterowanie</legend>
+                <label for="guests_field">Liczba gości</label>
+                <input type="number" name="guests" id="guests_field" min="1" max="5">
+    
+                <label for="check_in_field">Data zameldowania</label>
+                <input type="date" name="checkIn" id="check_in_field" />
+    
+                <label for="check_out_field">Data wymeldowania</label>
+                <input type="date" name="checkOut" id="check_out_field" />
+    
+                <label for="package_field">Pakiet</label>
+                <select name="package" id="package_field">
+                    <option value="" disabled selected>Wybierz pakiet</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Adres zamieszkania</legend>
+    
+                <label for="street_field">Ulica</label>
+                <input type="text" name="street" id="street_field" />
+    
+                <label for="city_field">Miasto</label>
+                <input type="text" name="city" id="city_field" />
+            </fieldset>
+            <fieldset >
+                <legend>Posiłki</legend>
+                <input type="checkbox" name="meals" id="breakfast_field" value="breakfast">
+                <label for="breakfast_field">Śniadanie</label>
+    
+                <input type="checkbox" name="meals" id="lunch_field" value="lunch" >
+                <label for="lunch_field">Lunch</label>
+    
+                <input type="checkbox" name="meals" id="dinner_field" value="dinner">
+                <label for="dinner_field">Obiadokolacja</label>
+            </fieldset>
+    
+            <fieldset >
+                <legend>Podróżuje służbowo</legend>
+                <input type="radio" name="buissnesTrip" id="yes_field" value="yes" required>
+                <label for="yes_field">Tak</label>
+    
+                <input type="radio" name="buissnesTrip" id="no_field" value="no" required>
+                <label for="no_field">Nie</label>
+            </fieldset>
+    
+            <label for="txt">Twoje dodatkowe życzenia</label>
+            <textarea id="txt"></textarea>
+    
+            <input type="submit" value="Zarezerwuj">
+            <input type="reset" value="Resetuj">
+
+        </form>
+    </main>
+
+</body>
+</html>

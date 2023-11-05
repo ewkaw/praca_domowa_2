@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Roboto', sans-serif;
+        }
+        #reservation-title{
+            font-size: 2rem;
+            font-weight: bold;
+            color: #111827;
+        }
+        fieldset{
+            border: 1px solid #e5e7eb;
+            padding: 0.5rem;
+            background-color: #f9fafb;
+        }
+        legend{
+            font-weight: bold;
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+        input{
+            border: 1px solid #e5e7eb;
+            border-radius: 0.125rem;
+            padding: 0.5rem;
+        }
+        label{
+            color: #374151;
+        }
+        button{
+            color: #ffff;
+            font-size: 1.15rem;
+            border: none;
+            padding: 0.5rem 1rem 0.5rem 1rem;
+        }
+        #book-btn{
+            background-color: #16a34a;
+        }
+        #reset-btn{
+            background-color: #ea580c;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <form id="reservation-form" action="/" method="get">
+        <h3 id="reservation-title">Rezerwacja </h3>
+
+        <fieldset>
+            <legend>Dane osobowe</legend>
+
+            <label for="first-name">Imię</label>
+            <input id="first-name" type="text" name="firstName" placeholder="Podaj imię" required />
+
+            <label for="last-name">Naziwsko</label>
+            <input id="last-name" type="text" name="lastName" placeholder="Podaj naziwsko" required />
+
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="Podaj email" required />
+
+            <label for="phone">Telefon</label>
+            <input id="phone" type="tel" name="phone" placeholder="Podaj telefon" required />
+        </fieldset>
+
+        <fieldset>
+            <legend>Zakwaterowanie</legend>
+
+            <label for="guests-number">Liczba gości</label>
+            <input id="guests-number" type="number" name="guestsNumber" placeholder="Podaj liczbę gości" required
+                min="1" max="4" step="1" value="2" />
+
+            <label for="check-in-date">Data zameldowania</label>
+            <input id="check-in-date" type="date" name="checkInDate" required
+                min="2023-10-23" max="2023-12-31" />
+
+            <label for="check-out-date">Data wymeldowania</label>
+            <input id="check-out-date" type="date" name="checkOutDate" required
+                min="2023-10-23" max="2023-12-31" />
+
+            <label for="pack">Pakiet</label>
+            <select name="pack" id="pack" required>
+                <option value="" selected disabled>Wybierz pakiet</option>
+                <option value="mini">Pakiet mini</option>
+                <option value="normal">Pakiet normal</option>
+                <option value="max">Pakiet maxi</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Adres zamieszkania</legend>
+
+            <label for="street">Ulica</label>
+            <input id="street" type="text" name="street" placeholder="Podaj ulicę" />
+
+            <label for="city">Miasto</label>
+            <input list="popular-cities-list" id="city" name="city" placeholder="Podaj miasto" />
+
+            <datalist id="popular-cities-list">
+                <option value="warszawa">Warszawa</option>
+                <option value="gdansk">Gdańsk</option>
+                <option value="wroclaw">Wrocław</option>
+            </datalist>
+        </fieldset>
+
+        <fieldset>
+            <legend>Posiłki</legend>
+
+            <input id="breakfest" type="checkbox" name="meals" value="breakfest" checked />
+            <label for="breakfest">Śniadanie</label>
+
+            <input id="lunch" type="checkbox" name="meals" value="lunch" />
+            <label for="lunch">Lunch</label>
+
+            <input id="dinner" type="checkbox" name="meals" value="dinner" checked />
+            <label for="dinner">Obiadokolacja</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Podróżuje słubowo</legend>
+
+            <input id="business-travel-yes" type="radio" name="businessTravel" value="yes" required />
+            <label for="business-travel-yes">Tak</label>
+
+            <input id="business-travel-no" type="radio" name="businessTravel" value="no" required checked />
+            <label for="business-travel-no">Nie</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Inne</legend>
+
+            <label for="extra-info">Twoje dodatokwe życzenia</label>
+        <textarea id="extra-info" name="extraInfo" cols="30" rows="10"
+            placeholder="Prośba o miejsce parkingowe, późniejsze wymeldowanie lub dowolne Twoje życzenie">Brak dodatkowych życzeń</textarea>
+        </fieldset>
+
+        <br />
+
+        <button id="book-btn" form="reservation-form">Zarezerwuj</button>
+
+        <button id="reset-btn" form="reservation-form" type="reset">Resetuj</button>
+    </form>
+</body>
+
+</html>

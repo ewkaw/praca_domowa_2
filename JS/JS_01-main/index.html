@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        const heightInCentimeters = 181;
+        const name = 'Oskar';
+        const libs = ['React', 'Next.js'];
+        const baseTechnologies =  ['JS', 'HTML'];
+
+        // Dodaj zmiany ponizej
+        const heightInMeters = heightInCentimeters/100;// skorzystaj ze zmiennej heightInCentimeters
+        const email =  name.toLowerCase() + "@alx.pl";// skorzystaj ze zmiennej name
+
+        const person = {
+            email,
+            heightInMeters,
+            isPresent: true,
+            address: {
+                street: "Jasna",
+                city: "Warszawa",
+                country: "Poland"
+            },
+            technologies: [...baseTechnologies, 'CSS', ...libs, 'TypeScript']
+        }
+
+        console.log(person);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

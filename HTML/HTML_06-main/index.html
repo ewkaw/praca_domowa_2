@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Dodajmy domyślne wartości, walidaje i placeholdery -->
+
+    <form id="reservation" action="/" method="get">
+        <h3>Rezerwacja </h3>
+
+        <fieldset>
+            <legend>Dane osobowe</legend>
+
+            <label for="first-name">Imię</label>
+            <!-- Pole wymagane -->
+            <input id="first-name" type="text" name="firstName"  placeholder="Podaj imię" required/>
+            
+            <label for="last-name">Naziwsko</label>
+            <!-- Pole wymagane -->
+            <input id="last-name" type="text" name="lastName"  placeholder="Podaj nazwisko" required/>
+            
+            <label for="email">Email</label>
+            <!-- Pole wymagane, musi być mailem -->
+            <input id="email" type="email" name="email" placeholder="Podaj email" required />
+            
+            <label for="phone">Telefon</label>
+            <!-- Pole wymagane, musi być numerem telefonu -->
+            <input id="phone" type="tel" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{3}|[0-9]{3}-[0-9]{3}-[0-9]{3}" placeholder="Podaj telefon" />
+        </fieldset>
+
+        <fieldset>
+            <legend>Zakwaterowanie</legend>
+
+            <label for="guests-number">Liczba gości</label>
+            <!-- Pole wymagane, musi być liczbą, musi być >=1, musi być <=4, musi być liczbą całkowitą -->
+            <!-- Domyślna wartość: 2 -->
+            <input id="guests-number" type="number" name="guestsNumber" required min="1" max="4" step="1" value="2"/>
+
+            <label for="check-in-date">Data zameldowania</label>
+            <!-- Pole wymagane, musi być najwcześniej z jutrzejszą datą, musi być najpóźniej ostatniego dnia roku -->
+            <input id="check-in-date" type="date" name="checkInDate" required  min="2023-11-04" max="2023-12-31" />
+
+            <label for="check-out-date">Data wymeldowania</label>
+            <!-- Pole wymagane, musi być najwcześniej z pojutrzejszą datą, musi być najpóźniej ostatniego dnia roku -->
+            <input id="check-out-date" type="date" name="checkOutDate" required  min="2023-11-05" max="2023-12-31"/>
+
+            <label for="pack">Pakiet</label>
+            <!-- Pole wymagane -->
+            <!-- Domyślna wartość: Wybierz pakiet. Po wyborze innej opcji nie zezwalamy na ponowny wybór tej opcji -->
+            <select name="pack" id="pack" required>
+                <option disabled selected value="">Wybierz pakiet</option>
+                <option value="mini">Pakiet mini</option>
+                <option value="normal">Pakiet normal</option>
+                <option value="max">Pakiet maxi</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Adres zamieszkania</legend>
+            
+            <label for="street">Ulica</label>
+            <input id="street" type="text" name="street" placeholder="Podaj ulicę" />
+
+            <label for="city">Miasto</label>
+            <input list="popular-cities-list" id="city" name="city" placeholder="Podaj miasto"/>
+
+            <datalist id="popular-cities-list">
+                <option value="warszawa">Warszawa</option>
+                <option value="gdansk">Gdańsk</option>
+                <option value="wroclaw">Wrocław</option>
+            </datalist>
+        </fieldset>
+
+        <fieldset>
+            <legend>Posiłki</legend>
+
+            <!-- Domyślnie zaznaczone -->
+            <input id="breakfest" type="checkbox" name="meals" value="breakfest" checked/>
+            <label for="breakfest">Śniadanie</label>
+        
+            <input id="lunch" type="checkbox" name="meals" value="lunch" />
+            <label for="lunch">Lunch</label>
+
+            <!-- Domyślnie zaznaczone -->
+            <input id="dinner" type="checkbox" name="meals" value="dinner" checked/>
+            <label for="dinner">Obiadokolacja</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Podróżuje słubowo</legend>
+            <!-- Pole wymagane -->
+
+            <input id="business-travel-yes" type="radio" name="businessTravel" value="yes" required />
+            <label for="business-travel-yes">Tak</label>
+
+            <!-- Domyślnie zaznaczone -->
+            <input id="business-travel-no" type="radio" name="businessTravel" value="no" checked/>
+            <label for="business-travel-no">Nie</label>
+        </fieldset>
+
+        <label for="extra-info">Twoje dodatokwe życzenia</label>
+        <!-- Domyślnie wartość: Brak dodatkowych życzeń -->
+        <textarea id="extra-info" name="extraInfo" cols="30" rows="10">brak dodatkowych życzeń</textarea>
+
+    </form>
+    <hr />
+   
+    <button form="reservation">Zarezerwuj</button>
+
+    <button form="reservation" type="reset">Resetuj</button>
+</body>
+
+</html>

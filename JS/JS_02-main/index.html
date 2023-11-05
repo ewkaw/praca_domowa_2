@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script> 
+        const products = [
+            { name: 'Banany', unitPrice: 2.46, quantity: 3, inStock: true, },
+            { name: 'Gruszki', unitPrice: 3.99, quantity: 7, inStock: false, },
+            { name: 'Jabłka', unitPrice: 1.96, quantity: 4, inStock: true, },
+            { name: 'Truskawki', unitPrice: Number('13,12'), quantity: 4, inStock: true, },
+        ];
+
+        // Dodaj swoje zmiany ponizej
+        let total = 0;
+        let prices = 0;
+        for(const el of products){
+            if(el["unitPrice"]){
+                if(el['inStock'] === true){
+                    total += el['quantity'] * el["unitPrice"];
+                }
+                prices +=  el["unitPrice"];
+            }
+
+        }
+        const stats = {
+            "priceAvg" : prices/products.length,
+            "total" : total.toFixed(2)
+        }
+        console.log(stats);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
